@@ -8,17 +8,21 @@ import controller.*;
 public class Robot {
     private Point position;
     private Direction direction;
-    private boolean status;
+    private boolean active;
 
     public Robot(String command) {
         String[] robotInfo = command.split(",");
-        this.position.x = Integer.parseInt(robotInfo[0]);
-        this.position.y = Integer.parseInt(robotInfo[1]);
+        this.position = new Point(Integer.parseInt(robotInfo[0]), Integer.parseInt(robotInfo[1]));
         this.direction = Direction.valueOf(robotInfo[2]);
+        this.active = false;
     }
 
-    public void processCommand() {
-
+    public void handleCommand(Action action) {
+        if (action == Action.MOVE) {
+            move();
+        } else {
+            switchDirection(action);
+        }
     }
 
     private void switchDirection(Action action) {
@@ -31,7 +35,7 @@ public class Robot {
     }
 
     public void switchStatus(boolean status) {
-        this.status = status;
+        this.active = status;
     }
 
     public Point getPosition() {
@@ -42,8 +46,8 @@ public class Robot {
         return this.direction;
     }
 
-    public boolean getStatus() {
-        return this.status;
+    public boolean isActive() {
+        return this.active;
     }
 
 }

@@ -1,7 +1,19 @@
 package command;
 
 public enum RobotCommand {
-    PLACE,
-    ROBOT,
-    REPORT
+    PLACE {
+        public String toString() {
+            return "PLACE";
+        }
+    },
+    ROBOT {
+        public String toString() {
+            return "ROBOT";
+        }
+    },
+    REPORT {
+        public String toString() {
+            return "REPORT";
+        }
+    }
 }

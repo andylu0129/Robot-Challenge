@@ -5,7 +5,7 @@ import java.awt.Point;
 import command.Direction;
 
 public class MovementController {
-    private static Rectangle tabletop = new Rectangle(0, 0, 5, 5);
+    public static final Rectangle tabletop = new Rectangle(0, 0, 5, 5);
 
     public MovementController() {
 
@@ -16,21 +16,20 @@ public class MovementController {
     }
 
     public static Point move(Point position, Direction direction) {
-        Point newPosition = position;
+        Point newPosition = new Point(position.x, position.y);
 
         if (direction == Direction.EAST) {
             newPosition.x = position.x + 1;
-            return newPosition;
         } else if (direction == Direction.NORTH) {
             newPosition.y = position.y + 1;
-            return newPosition;
         } else if (direction == Direction.WEST) {
             newPosition.x = position.x - 1;
-            return newPosition;
         } else if (direction == Direction.SOUTH) {
             newPosition.y = position.y - 1;
+        }
+        if (isInside(newPosition)) {
             return newPosition;
         }
-        return null;
+        return position;
     }
 }

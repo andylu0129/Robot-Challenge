@@ -17,7 +17,7 @@ public class DirectionController {
         } else if (action == Action.RIGHT) {
             degree += Action.RIGHT.value;
         }
-        normalizeDegree(degree);
+        degree = normalizeDegree(degree);
 
         return Direction.valueOf(degree);
     }
