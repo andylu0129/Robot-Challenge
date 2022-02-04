@@ -1,2 +1,6 @@
 .vscode
+bin
 lib
+README.md
+.gitignore
+recruitment.wiki
