@@ -1,3 +1,5 @@
+package command;
+
 public enum Action {
     LEFT(90),
     RIGHT(-90),

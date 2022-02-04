@@ -1,6 +1,6 @@
 package controller;
 
-import value.*;
+import command.*;
 
 public class DirectionController {
 

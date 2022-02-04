@@ -1,10 +1,26 @@
-package value;
+package command;
 
 public enum Direction {
-    EAST(0),
-    NORTH(90),
-    WEST(180),
-    SOUTH(270);
+    EAST(0) {
+        public String toString() {
+            return "EAST";
+        }
+    },
+    NORTH(90) {
+        public String toString() {
+            return "NORTH";
+        }
+    },
+    WEST(180) {
+        public String toString() {
+            return "WEST";
+        }
+    },
+    SOUTH(270) {
+        public String toString() {
+            return "SOUTH";
+        }
+    };
 
     public final int degree;
 
